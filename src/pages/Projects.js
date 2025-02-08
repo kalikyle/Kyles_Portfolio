@@ -30,7 +30,7 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h1>My Projects</h1>
+      <h1>PROJECTS</h1>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">

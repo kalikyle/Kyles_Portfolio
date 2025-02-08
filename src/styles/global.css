@@ -249,13 +249,14 @@ body {
   .about li {
     list-style: none;
     position: relative;
-    padding-left: 30px;
-    font-size: 1.1rem;
+    padding-left: 20px;
+    font-size: 1rem;
     color: white;
+    margin-bottom: 10px;
   }
   
   .about li::before {
-    content: "\2022"; /* Unicode for bullet */
+    content: "\25CA"; /* Unicode for bullet */
     font-size: 1.5rem;
     color: cyan;
     position: absolute;
@@ -267,7 +268,7 @@ body {
   
   .about li:hover::before {
     transform: scale(2);
-    color: magenta;
+    color: rgb(30, 255, 0);
   }
   .Languages {
     background: rgba(0, 0, 0, 0.8);

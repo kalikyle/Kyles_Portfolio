@@ -9,8 +9,8 @@ const About = () => {
     animate={{ opacity: 1 }}
     transition={{ duration: 1 }}
     >
-      <h1>About Me</h1>
-      <h3>Aspiring programmer who just want to be successful in life</h3>
+      <h1>SKILLSETS</h1>
+      <h3>Aspiring Programmer who just want to be Successful in Life. LOL</h3>
       <div className="about-grid">
         <div className= "Languages">
             <h3>Languages and Platforms</h3>

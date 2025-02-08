@@ -10,7 +10,7 @@ const Certificates = () => {
     animate={{ opacity: 1 }}
     transition={{ duration: 1 }}
     >
-      <h1>My Certificates</h1>
+      <h1>CERTIFICATES</h1>
       <div className="certificates-grid">
         <div className="certificate-card">
           <img src="https://via.placeholder.com/300" alt="Certificate" />
