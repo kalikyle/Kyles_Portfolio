@@ -7,7 +7,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }  
+  } 
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 100%;
+}
 
   .site-logo {
     height: 50px; /* Adjust as needed */
@@ -170,6 +177,7 @@ body {
   }
   
   .about {
+    margin-top: -50px;
     text-align: center;
     padding: 100px 20px;
     color: white;
@@ -183,8 +191,9 @@ body {
   }
 
   .certificates {
+    margin-top: -50px;
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20px 100px;
     color: white;
     background: linear-gradient(180deg, rgb(204, 226, 6),rgba(12, 11, 7, 0));
   }
@@ -209,6 +218,7 @@ body {
   }
   
   .projects {
+    margin-top: -50px;
     text-align: center;
     padding: 100px 20px;
     color: white;
@@ -402,6 +412,29 @@ body {
     margin-left: -20px;
   }
 
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+
+    
+  }
+  
+  .certificate-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(251, 255, 0);
+  }
+  
+  .certificate-pic{
+      height: 200px; /* Adjust as needed */
+      width: auto;
+      object-fit: cover;
+  }
+
 
  /* General Responsive Design */
 @media screen and (max-width: 768px) {
@@ -466,7 +499,6 @@ body {
     .home{
       padding-top: 200px;
     }
-
     .about{
       padding-top: 200px;
     }
@@ -482,6 +514,8 @@ body {
     .contact{
       padding-top: 200px;
     }
+
+    
 }
   
 @media screen and (max-width: 480px) {
@@ -513,7 +547,28 @@ body {
       text-align: center;
       gap: 5px;
     }
+
+    .home{
+      padding-top: 280px;
+    }
+
+    .about{
+      padding-top: 280px;
+    }
+
+    .projects{
+      padding-top: 280px;
+    }
+
+    .certificates{
+      padding-top: 280px;
+    }
+
+    .contact{
+      padding-top: 280px;
+    }
 }
+
 
   
   

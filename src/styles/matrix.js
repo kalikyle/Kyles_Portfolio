@@ -9,14 +9,15 @@ const MatrixBackground = ({ fillStyle }) => {
     const context = canvas.getContext('2d');
 
     const setCanvasSize = () => {
-      canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
-      console.log(`Canvas size: ${canvas.width}x${canvas.height}`); // Log the size
+      canvas.height = Math.max(window.innerHeight, document.documentElement.scrollHeight);
+      console.log(`Canvas size updated: ${canvas.width}x${canvas.height}`);
+  
       const fontSize = 16;
       const columns = Math.floor(canvas.width / fontSize);
-      // Initialize rainDrops with random starting positions
       rainDropsRef.current = Array.from({ length: columns }, () => Math.floor(Math.random() * (canvas.height / fontSize)));
-    };
+  };
+  
 
     const characters = 'アァカサタナハマヤャラワガザダバパABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const fontSize = 16;

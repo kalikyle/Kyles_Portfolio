@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
-import siteLogo from "../Resources/SITE LOGO.png";
 
 const Navbar = () => {
   return (
     <div className="navbar">
   <div className="Email">
-  <img src={siteLogo} alt="KaliKyle Logo" className="site-logo" />
+  <img src="/Resources/SITE LOGO.png" alt="KaliKyle Logo" className="site-logo" />
   </div>
   <div className="Pages">
     <ul>
