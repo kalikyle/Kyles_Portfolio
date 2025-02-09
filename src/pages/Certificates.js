@@ -16,7 +16,7 @@ const Certificates = () => {
         {certificates.map((certificate) => (
           <div key={certificate.id} className="certificate-card">
             <a href={certificate.image} target="_blank" rel="noopener noreferrer">
-              <img className="certificate-pic" src={certificate.image} alt={certificate.title} />
+              <img className="certificate-pic" src = {certificate.image} alt={certificate.title} />
             </a>  
             <h3>{certificate.title}</h3>
             <p>{certificate.description}</p>

@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
   <div className="Email">
-  <img src="/Resources/SITE LOGO.png" alt="KaliKyle Logo" className="site-logo" />
+  <img src={`${process.env.PUBLIC_URL}/Resources/SITE LOGO.png`} alt="KaliKyle Logo" className="site-logo" />
   </div>
   <div className="Pages">
     <ul>
