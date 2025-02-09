@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kalikyle/Kyles_Portfolio/static/css/main.f8464b18.css",
+    "main.js": "/kalikyle/Kyles_Portfolio/static/js/main.be62eafe.js",
+    "static/js/488.21a3b654.chunk.js": "/kalikyle/Kyles_Portfolio/static/js/488.21a3b654.chunk.js",
+    "index.html": "/kalikyle/Kyles_Portfolio/index.html",
+    "main.f8464b18.css.map": "/kalikyle/Kyles_Portfolio/static/css/main.f8464b18.css.map",
+    "main.be62eafe.js.map": "/kalikyle/Kyles_Portfolio/static/js/main.be62eafe.js.map",
+    "488.21a3b654.chunk.js.map": "/kalikyle/Kyles_Portfolio/static/js/488.21a3b654.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8464b18.css",
+    "static/js/main.be62eafe.js"
+  ]
+}
