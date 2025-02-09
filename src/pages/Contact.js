@@ -10,7 +10,7 @@ const Contact = () => {
     animate={{ opacity: 1 }}
     transition={{ duration: 1 }}
     >
-      <h2>Contact Me</h2>
+      <h2>CONTACT</h2>
       <div className="social-icons">
        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook  color="white" fontSize="1.5em"/></a>
                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram  color="white" fontSize="1.5em"/></a>

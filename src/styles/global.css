@@ -1,46 +1,71 @@
 body {
     background-image: url('https://img.freepik.com/free-photo/turned-gray-laptop-computer_400718-47.jpg?t=st=1739035378~exp=1739038978~hmac=aa630f4dc6341db9fb9abea0b3651a2cc627dfe4cf449ef655f110fa25d5867f&w=740');
     background-size: cover;
+    background-attachment: fixed; /* Ensures background stays fixed */
+    background-repeat: no-repeat;
     color: black; /* Ensure text is visible */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }  
 
-.navbar {
+  .site-logo {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    object-fit: contain;
+  }
+
+  .navbar {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.411); /* Slightly darker background for better visibility */
     color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    padding: 10px 60px 0px;
     z-index: 1000;
+  }
+  
+  .Email {
+    flex: .7; /* Allow email section to take up space */
+  }
+  
+  .Pages {
+    flex: 3; /* Allow pages section to take up more space */
+  }
+  
+  .Socials {
+    flex: 1; /* Allow socials section to take up space */
+    display: flex; /* Use flexbox for social icons */
+    gap: 10px; /* Space between social icons */
   }
   
   .navbar ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    justify-content: center; /* Center the navigation links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
   }
   
   .navbar li a {
     color: white;
-    text-transform: uppercase;
     text-decoration: none;
+    text-transform: uppercase;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
   }
-  
+
   .navbar li a:hover {
     color: rgb(0, 255, 234);
   }
+  
 
   .home {
-    margin-top: 70px; /* Prevent content from being hidden under the navbar */
+    background-size: cover;
     text-align: center;
     padding: 100px 20px;
     color: white;
@@ -51,6 +76,12 @@ body {
     font-size: 3rem;
     color: linear-gradient(180deg, rgb(109, 135, 160),rgba(211, 208, 198, 0));
     text-shadow: 2px 2px 3px black;
+  }
+
+  .home h2 {
+    color: linear-gradient(180deg, rgb(109, 135, 160),rgba(211, 208, 198, 0));
+    margin-top: -20px;
+    margin-bottom: 30px;
   }
   
   .home p {
@@ -63,7 +94,6 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-top: -50px;
     border: 5px solid rgb(0, 0, 0);
   }
 
@@ -238,7 +268,7 @@ body {
   .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
   }
 
@@ -282,11 +312,13 @@ body {
   .Languages h3{
     margin-top: 10px;
     color: rgb(9, 255, 0);
+    text-transform: uppercase;
    
   }
 
   .Languages li {
     text-align: left;
+    margin-left: -20px;
   }
 
   .Databases {
@@ -301,11 +333,13 @@ body {
   .Databases h3{
     margin-top: 10px;
     color: rgb(9, 255, 0);
+    text-transform: uppercase;
    
   }
 
   .Databases li {
     text-align: left;
+    margin-left: -20px;
   }
   .Frameworks {
     background: rgba(0, 0, 0, 0.8);
@@ -319,11 +353,13 @@ body {
   .Frameworks h3{
     margin-top: 10px;
     color: rgb(9, 255, 0);
+    text-transform: uppercase;
    
   }
 
   .Frameworks li {
     text-align: left;
+    margin-left: -20px;
   }
   .Non-Technical {
     background: rgba(0, 0, 0, 0.8);
@@ -337,11 +373,13 @@ body {
   .Non-Technical h3{
     margin-top: 10px;
     color: rgb(9, 255, 0);
+    text-transform: uppercase;
    
   }
 
   .Non-Technical li {
     text-align: left;
+    margin-left: -20px;
   }
   .Other-Skills {
     background: rgba(0, 0, 0, 0.8);
@@ -355,24 +393,58 @@ body {
   .Other-Skills h3{
     margin-top: 10px;
     color: rgb(9, 255, 0);
+    text-transform: uppercase;
    
   }
 
   .Other-Skills li {
     text-align: left;
+    margin-left: -20px;
   }
 
 
-  /* General Responsive Design */
+ /* General Responsive Design */
 @media screen and (max-width: 768px) {
     .full-screen {
       height: auto;
       padding: 20px;
     }
+
+    .navbar {
+      position: flex;
+      top: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.178);
+      padding: 10px 0;
+    }
+  
+    .navbar-left, .navbar-right {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .navbar-center {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      gap: 10px;
+    }
   
     .home-content {
       text-align: center;
       padding: 20px;
+    }
+
+    .site-logo{
+      margin-bottom: 10px;
+    }
+
+    .Pages{
+      margin-bottom: 20px;
     }
   
     .profile-picture {
@@ -381,18 +453,38 @@ body {
     }
   
     .social-icons {
-      flex-direction: column;
+      flex-direction: row;
       gap: 10px;
-      size: 20px;
     }
   
     .footer {
       position: relative;
       padding: 10px;
+      text-align: center;
     }
-  }
+
+    .home{
+      padding-top: 200px;
+    }
+
+    .about{
+      padding-top: 200px;
+    }
+
+    .projects{
+      padding-top: 200px;
+    }
+
+    .certificates{
+      padding-top: 200px;
+    }
+
+    .contact{
+      padding-top: 200px;
+    }
+}
   
-  @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .profile-picture {
       width: 100px;
       height: 100px;
@@ -405,7 +497,24 @@ body {
     h2 {
       font-size: 1.2rem;
     }
-  }
+  
+    .navbar {
+      padding: 5px 0;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+  
+    .navbar-left, .navbar-right {
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+    }
+}
+
   
   
   
