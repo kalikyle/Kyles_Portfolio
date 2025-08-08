@@ -1,7 +1,7 @@
 // =================== src/components/ProjectCard.jsx ===================
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ title, desc, tags, links, thumb }) {
+export default function ProjectCard({ title, desc, tags, links, thumb, id, name}) {
   return (
     <motion.article
       className="card project glass"

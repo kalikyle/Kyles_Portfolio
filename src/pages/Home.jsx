@@ -46,17 +46,9 @@ const [projects, setProjects] = useState([]);
               ? { label: "Live", href: repo.homepage }
               : null
           ].filter(Boolean),
-          thumb: (
-  <img 
-    src={`https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/main/.github/open-graph-image.png`}
-    alt={repo.name}
-    onError={(e) => {
-      // Fallback to GitHub's auto-generated OpenGraph image
-      e.target.src = `https://opengraph.githubassets.com/${repo.id}/${repo.owner.login}/${repo.name}`;
-    }}
-  />
-)
-
+          thumb: `https://opengraph.githubassets.com/${repo.id}/kalikyle/${repo.name}`,
+          id: repo.id,
+          name: repo.name
         }));
       setProjects(mapped);
     })
