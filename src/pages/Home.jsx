@@ -42,7 +42,7 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0);
     .then((data) => {
       const mapped = data
         .filter(repo => !repo.fork) // Exclude forks
-        .slice(0, 6) // Take only the first 6 most recently updated
+        .slice(0, 6) // Take only the first 6 most recently update
         .map((repo) => ({
           title: repo.name,
           desc: repo.description || "No description provided.",
