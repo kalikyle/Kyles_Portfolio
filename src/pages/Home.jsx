@@ -14,7 +14,7 @@ const profile = {
   linkedin: 'https://www.linkedin.com/in/kyle-pintor-8a17a417b/',
   github: 'https://github.com/kalikyle',
   location: 'Philippines',
-  summary: `Cum Laude — STI Global City (Class of 2025). Metrobank STRONG Scholar (2023–2025) and Pasig City Scholar (2018–2025). Award-winning capstone projects in game development and strong backend experience with Java and Spring Boot.`
+  summary: `A passionate Developer with hands-on experience in building scalable and efficient backend systems using Spring Boot, RESTful APIs, and microservices. I have a degree in Information Technology and graduated as Cum Laude from STI. I am eager to apply my skills in real-world projects and continue growing in the tech industry.`
 }
 
 const skills = [
@@ -26,8 +26,15 @@ const skills = [
   { name: 'SQL / H2', percent: '75%' }
 ]
 
+const images = [
+  "https://media.licdn.com/dms/image/v2/D5603AQH2mruJ1y26fQ/profile-displayphoto-scale_200_200/B56Zhod3sFHUAc-/0/1754099319623?e=1757548800&v=beta&t=YD2lbAxa0xYEQe891IJa72dWFF4wxLU8B7EUf6svTbA",
+  "https://avatars.githubusercontent.com/u/58544907?v=4",
+  "https://yt3.ggpht.com/U5F2AMpBSjN84SbqZkGPkBOqmmN7QhY4MUpIgnjGkuFuDqNwwGrlsZrHGDTco8_AH-kf3PkfYA=s600-c-k-c0x00ffffff-no-rj-rp-mo",
+];
+
 export default function Home(){
 const [projects, setProjects] = useState([]);
+const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
   fetch("https://api.github.com/users/kalikyle/repos?sort=updated")
@@ -55,12 +62,16 @@ const [projects, setProjects] = useState([]);
     .catch((err) => console.error(err));
 }, []);
 
+useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 10000); // switch every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
 
   return (
     <div className="site">
-     
-
       <main>
         <section id="home" className="hero">
           <div className="hero-inner">
@@ -68,10 +79,10 @@ const [projects, setProjects] = useState([]);
             <motion.p className="lead" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.2}}>{profile.summary}</motion.p>
 
             <div className="cta-row">
-              <a className="btn" href="#projects" onClick={(e)=>{ e.preventDefault(); document.getElementById('projects')?.scrollIntoView({behavior:'smooth'}) }}>See Projects</a>
-              <a className="btn ghost" href="#contact" onClick={(e)=>{ e.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}) }}>Contact Me</a>
+              <a className="btn glass" href="#projects" onClick={(e)=>{ e.currentTarget.blur(); e.preventDefault(); document.getElementById('projects')?.scrollIntoView({behavior:'smooth'}) }}>See Projects</a>
+              <a className="btn glass" href="#contact" onClick={(e)=>{ e.currentTarget.blur();e.preventDefault(); document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}) }}>Contact Me</a>
             </div>
-
+          <div className="qlinks glass">
             <ul className="quick-links">
               <li><strong>Location:</strong> {profile.location}</li>
               <li><strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a></li>
@@ -80,25 +91,40 @@ const [projects, setProjects] = useState([]);
               <li><strong>GitHub:</strong> <a href={profile.github} target="_blank" rel="noreferrer">github.com/kalikyle</a></li>
             </ul>
           </div>
+          </div>
 
 <div className="hero-card glass">
-  <div className="kp">
-    <img
-      src="https://media.licdn.com/dms/image/v2/D5603AQH2mruJ1y26fQ/profile-displayphoto-scale_200_200/B56Zhod3sFHUAc-/0/1754099319623?e=1757548800&v=beta&t=YD2lbAxa0xYEQe891IJa72dWFF4wxLU8B7EUf6svTbA"
-      alt="Kyle Pintor"
-      className="profile-img"
-    />
-  </div>
+  <div className="kp" style={{ position: 'relative', width: 200, height: 200 }}>
+              {images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Kyle Pintor profile ${i}`}
+                  className="profile-img"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: i === currentImageIndex ? 1 : 0,
+                    transition: 'opacity 1s ease-in-out',
+                    borderRadius: '50%'
+                  }}
+                />
+              ))}
+            </div>
   <div className="meta">
     <div className="meta-line"><strong>STI Alumni</strong></div>
     <div className="meta-line">Metrobank STRONG Scholar • Pasig City Scholar</div>
-    <div className="meta-line">Incoming Java Backend Developer (Metrobank internship experience)</div>
+    <div className="meta-line">Java Backend Developer (Metropolian Bank and Trust Company - Metrobank)</div>
   </div>
 </div>
         </section>
 
         <section id="about" className="panel">
-          <h3>About</h3>
+          <h2>About</h2>
           <p className="muted">Summary & Honors</p>
           <p>Cum Laude — STI Global City (Class of 2025). Metrobank STRONG Scholar (2023–2025) and Pasig City Scholar (2018–2025). Recognized for academic excellence and award-winning capstone projects in game development.</p>
           <ul className="honors">
@@ -110,9 +136,9 @@ const [projects, setProjects] = useState([]);
         </section>
 
         <section id="projects" className="panel projects">
-      <h3>Selected Projects</h3>
+      <h2>Projects</h2>
       <p className="muted">
-        A few highlights — click to view source or demo.
+        A few highlights from GitHub — click to view source or demo.
       </p>
 
       <div className="grid">
@@ -124,7 +150,7 @@ const [projects, setProjects] = useState([]);
 
 
         <section id="skills" className="panel">
-          <h3>Skills</h3>
+          <h2>Skills</h2>
           <p className="muted">Top technical skills and certifications</p>
 
           <div className="skills-grid">
@@ -132,7 +158,7 @@ const [projects, setProjects] = useState([]);
           </div>
 
           <div className="certs">
-            <h4>Certifications</h4>
+            <h2>Certifications</h2>
             <ul>
               <li>Java Fundamentals Course — Completion</li>
               <li>Java (Basic) — Certificate</li>
@@ -142,15 +168,15 @@ const [projects, setProjects] = useState([]);
             </ul>
           </div>
         </section>
-
+ 
         <section id="experience" className="panel">
-          <h3>Experience</h3>
-          <div className="timeline">
+          <h1>Experience</h1>
+          <div className="timeline glass">
             <div className="entry">
-              <div className="time">August 2025 —Present</div>
+              <div className="time">August 2025 — Present</div>
               <div className="detail">
                 <h4>Java Developer — Metrobank</h4>
-                <p>Internship — worked on backend Java services and supported integrations. Gained practical experience with enterprise-grade systems.</p>
+                <p>Develop and maintain backend Java services, focusing on scalable microservices and API integrations. Work with enterprise systems to improve code quality, implement unit tests, and collaborate with cross-functional teams to deliver reliable financial solutions.</p>
               </div>
             </div>
             <div className="entry">
@@ -162,7 +188,7 @@ const [projects, setProjects] = useState([]);
             </div>
           </div>
 
-          <h4>Education</h4>
+          <h1>Education</h1>
           <ul className="education">
             <li><strong>STI College</strong> — Bachelor's degree, Information Technology (Sept 2021 — July 2025). Cum Laude.</li>
             <li><strong>Arellano University</strong> — Information & Communication Technology, Information Technology (June 2019 — March 2021).</li>
@@ -171,22 +197,22 @@ const [projects, setProjects] = useState([]);
         </section>
 
         <section id="contact" className="panel contact">
-          <h3>Contact</h3>
+          <h1>Contact</h1>
           <p className="muted">Want to work together or see the code? Reach out.</p>
 
           <div className="contact-grid">
-            <div>
+            <div className = "contacts">
               <p><strong>Email</strong><br /><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
               <p><strong>Phone</strong><br /><a href={`tel:${profile.phone}`}>{profile.phone}</a></p>
               <p><strong>LinkedIn</strong><br /><a href={profile.linkedin} target="_blank" rel="noreferrer">linkedin.com/in/kyle-pintor-8a17a417b</a></p>
               <p><strong>GitHub</strong><br /><a href={profile.github} target="_blank" rel="noreferrer">github.com/kalikyle</a></p>
             </div>
 
-            <form className="contact-form glass" action="https://formspree.io/f/your-form-id" method="POST">
+            <form className="contact-form glass" action="https://formspree.io/f/mjkopzer" method="POST">
               <label>Name<input type="text" name="name" required /></label>
               <label>Email<input type="email" name="email" required /></label>
               <label>Message<textarea name="message" rows="5" required></textarea></label>
-              <button className="btn" type="submit">Send message</button>
+              <button className="btn glass" type="submit">Send message</button>
             </form>
           </div>
         </section>

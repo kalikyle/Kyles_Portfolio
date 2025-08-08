@@ -8,6 +8,6 @@ export default function BackToTop(){
     return ()=> window.removeEventListener('scroll', onScroll)
   },[])
   return show ? (
-    <button className="back-to-top" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}>↑</button>
+    <button className="back-to-top glass btn" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}>↑</button>
   ) : null
 }

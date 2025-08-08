@@ -10,7 +10,7 @@ export default function Header(){
   return (
     <header className="site-header glass">
       <div className="brand">
-        <div className="logo">KP</div>
+        <div className="logo">KTP</div>
         <div>
           <h1>Kyle Pintor</h1>
           <div className="tag">Software developer • Java & Backend • Game Dev</div>

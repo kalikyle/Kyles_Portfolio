@@ -7,6 +7,12 @@ export default function ProjectCard({ title, desc, tags, links, thumb, id, name}
       className="card project glass"
       initial={{ opacity: 0, rotateY: 90 }}
       whileInView={{ opacity: 1, rotateY: 0 }}
+      whileHover={{ 
+    translateY: -3, 
+    boxShadow: "0 6px 30px rgba(0,0,0,0.35)",
+    transition: { duration: 0.15, ease: "easeOut" }  // Faster and smoother
+  }}
+
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       style={{ transformStyle: "preserve-3d" }}
